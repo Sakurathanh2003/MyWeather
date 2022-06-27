@@ -7,14 +7,28 @@
 
 import UIKit
 
+@IBDesignable
 class LineView: UIView {
+    @IBInspectable var color: UIColor = .clear
+    
+    var path = UIBezierPath()
 
-    /*
-    // Only override draw() if you perform custom drawing.
+    
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
-        // Drawing code
+        self.clipsToBounds = true
+        drawPath()
     }
-    */
+    
+    func drawPath() {
+        path = UIBezierPath()
+        
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addQuadCurve(to: CGPoint(x: self.frame.width, y: 0),
+                          controlPoint: CGPoint(x: self.frame.width / 2, y: self.frame.height / 1.5))
+        color.setStroke()
+        path.stroke()
+    }
+
 
 }
