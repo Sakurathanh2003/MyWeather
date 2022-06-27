@@ -44,6 +44,26 @@ extension UIView {
         }
     }
     
+    @IBInspectable var blurView: CGFloat {
+        set {
+            blurView(alpha: newValue, style: .dark)
+        }
+        
+        get {
+            return 0
+        }
+    }
+    
+    @IBInspectable var shadowRadius: CGFloat {
+        set {
+            self.layer.shadowRadius = newValue
+        }
+        
+        get {
+            return self.layer.shadowRadius
+        }
+    }
+    
     func fitSuperviewConstraint(edgeInset: UIEdgeInsets = .zero) {
        self.translatesAutoresizingMaskIntoConstraints = false
        let superview = self.superview!

@@ -75,13 +75,17 @@
                                 <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.28235294117647058" green="0.19215686274509802" blue="0.61568627450980395" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.28235294117647058" green="0.19215686274509802" blue="0.61568627450980395" alpha="0.8238048427152318" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="30"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="AO0-cv-51Z" secondAttribute="bottom" id="BKL-Kc-IjL"/>
                 <constraint firstItem="AO0-cv-51Z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="b6L-5g-JaN"/>
