@@ -58,5 +58,11 @@ class AddView: UIView {
         color.setStroke()
         path.stroke()
     }
-
+    
+    func getColorBackground() {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        view.blurView(alpha: 0.5, style: .dark)
+        let gradient = UIImage().gradientImage(bounds: view.bounds, colors: [colorBackground])
+        view.backgroundColor = UIColor(patternImage: gradient)
+    }
 }
