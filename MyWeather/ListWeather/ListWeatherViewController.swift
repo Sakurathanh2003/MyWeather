@@ -11,11 +11,16 @@ private struct Const {
     static let ratioCell: CGFloat = 324 / 184
 }
 
+protocol ListWeatherViewControllerDelegate: AnyObject {
+    func updateHome(weatherDay: WeatherDay)
+}
+
 class ListWeatherViewController: UIViewController {
     
     @IBOutlet weak var weatherCollectionView: UICollectionView!
     
     var viewModel = ListWeatherViewModel.makeEmpty()
+    weak var delegate: ListWeatherViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +50,11 @@ class ListWeatherViewController: UIViewController {
 }
 
 extension ListWeatherViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = viewModel.itemAt(index: indexPath.row)
+        delegate?.updateHome(weatherDay: item.weatherDay)
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension ListWeatherViewController: UICollectionViewDataSource {

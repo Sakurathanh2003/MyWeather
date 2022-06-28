@@ -64,6 +64,7 @@ class HomeViewController: UIViewController {
 
         vc.viewModel.addWeatherDay(weatherDay: hanoi.weatherDays)
         vc.viewModel.addWeatherDay(weatherDay: hochiMinh.weatherDays)
+        vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -112,5 +113,13 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 12
+    }
+}
+
+extension HomeViewController: ListWeatherViewControllerDelegate {
+    func updateHome(weatherDay: WeatherDay) {
+        self.viewModel = HomeViewModel(weatherDay: weatherDay)
+        configLabel()
+        weatherCollectionView.reloadData()
     }
 }
