@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [master, develop]
+  pull_request:
+    branches: [master, develop]
+
+jobs:
+  build:
+    runs-on: [self-hosted, macOS]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update cocoapods
+        run: pod repo update
+      - name: Pod binary prebuild
+        run: pod binary prebuild
+        env:
+          IS_POD_BINARY_CACHE_ENABLED: "true"
+      - name: Build beta
+        run: fastlane beta
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
+          IS_POD_BINARY_CACHE_ENABLED: "true"
+          LANG: en_US.UTF-8
+          LANGUAGE: en_US.UTF-8
+          LC_ALL: en_US.UTF-8
