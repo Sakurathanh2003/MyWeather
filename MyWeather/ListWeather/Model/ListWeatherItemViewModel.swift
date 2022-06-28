@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct ListWeatherItemViewModel {
     var weatherDay: WeatherDay
@@ -54,6 +55,10 @@ struct ListWeatherItemViewModel {
     
     func getDescription() -> String {
         return weatherDay.current.condition.text
+    }
+    
+    func getImageThumnail() -> UIImage? {
+        return UIImage(named: weatherDay.current.condition.text)
     }
 
 }

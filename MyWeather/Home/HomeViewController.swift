@@ -85,6 +85,7 @@ extension HomeViewController: UICollectionViewDataSource {
         }
         
         cell.bindData(viewModel: item, now: indexPath.row == index)
+        print(item)
 
         return cell
     }

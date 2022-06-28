@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zpv-8z-n3b" customClass="WeatherWidgeView" customModule="MyWeather" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="324" height="184"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Cloud_zap" translatesAutoresizingMaskIntoConstraints="NO" id="hfY-gy-ieO">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sunny" translatesAutoresizingMaskIntoConstraints="NO" id="hfY-gy-ieO">
                                 <rect key="frame" x="164" y="0.0" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="4Ah-SB-MsK"/>
@@ -84,11 +84,12 @@
                 <outlet property="locationLabel" destination="CYb-cr-rJL" id="kUo-uh-GNx"/>
                 <outlet property="maxMinLabel" destination="Pdt-M8-D0a" id="kms-L2-qN3"/>
                 <outlet property="tempLabel" destination="8mv-4C-DJp" id="DtH-09-D3X"/>
+                <outlet property="thumnail" destination="hfY-gy-ieO" id="qMH-4V-RPJ"/>
             </connections>
             <point key="canvasLocation" x="139" y="114"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="ic_Cloud_zap" width="1080" height="1080"/>
+        <image name="Sunny" width="1835" height="1787"/>
     </resources>
 </document>

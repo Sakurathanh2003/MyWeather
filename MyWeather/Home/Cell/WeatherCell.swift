@@ -41,5 +41,9 @@ class WeatherCell: UICollectionViewCell {
         } else {
             mainView.backgroundColor = UIColor(rgb: 0x48319D).withAlphaComponent(0.2)
         }
+        
+        if let image = viewModel.getThumnail() {
+            iconWeather.image = image
+        }
     }
 }

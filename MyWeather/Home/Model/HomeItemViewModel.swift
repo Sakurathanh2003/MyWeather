@@ -28,4 +28,8 @@ struct HomeItemViewModel {
         
         return "\(numberTime - 12) PM"
     }
+    
+    func getThumnail() -> UIImage? {
+        return UIImage(named: hour.condition.text)
+    }
 }

@@ -28,7 +28,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Cloud_zap" translatesAutoresizingMaskIntoConstraints="NO" id="EbU-02-moc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Cloud_zap" translatesAutoresizingMaskIntoConstraints="NO" id="EbU-02-moc">
                                 <rect key="frame" x="14" y="48" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="JIg-mf-YOB"/>
@@ -36,7 +36,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3j5-3M-HVO">
-                                <rect key="frame" x="16" y="74" width="28.5" height="18"/>
+                                <rect key="frame" x="16" y="80" width="28.5" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="Pea-ub-fxQ"/>
                                 </constraints>
@@ -64,7 +64,7 @@
                             <constraint firstItem="EbU-02-moc" firstAttribute="top" secondItem="DkB-fY-pyK" secondAttribute="bottom" constant="12" id="0iP-dQ-chk"/>
                             <constraint firstItem="DkB-fY-pyK" firstAttribute="top" secondItem="AO0-cv-51Z" secondAttribute="top" constant="16" id="CW0-g9-Flj"/>
                             <constraint firstItem="DkB-fY-pyK" firstAttribute="centerX" secondItem="AO0-cv-51Z" secondAttribute="centerX" id="EaJ-hR-oh9"/>
-                            <constraint firstItem="3j5-3M-HVO" firstAttribute="top" secondItem="EbU-02-moc" secondAttribute="bottom" constant="-6" id="NC0-XB-eUH"/>
+                            <constraint firstItem="3j5-3M-HVO" firstAttribute="top" secondItem="EbU-02-moc" secondAttribute="bottom" id="NC0-XB-eUH"/>
                             <constraint firstAttribute="bottom" secondItem="3xO-lm-ddj" secondAttribute="bottom" constant="16" id="Por-cd-JrJ"/>
                             <constraint firstItem="3xO-lm-ddj" firstAttribute="centerX" secondItem="AO0-cv-51Z" secondAttribute="centerX" id="VJS-yP-PuD"/>
                             <constraint firstItem="3j5-3M-HVO" firstAttribute="centerX" secondItem="AO0-cv-51Z" secondAttribute="centerX" id="Xxz-cK-Md4"/>

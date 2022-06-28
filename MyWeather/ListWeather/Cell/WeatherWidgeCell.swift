@@ -14,6 +14,7 @@ class WeatherWidgeCell: UICollectionViewCell {
     @IBOutlet weak var maxMinLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var thumnail: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +26,10 @@ class WeatherWidgeCell: UICollectionViewCell {
         maxMinLabel.text = "H:\(Int(viewModel.getMaxTemp()))°   L:\(Int(viewModel.getMinTemp()))°"
         locationLabel.text = viewModel.getNameLocation()
         descriptionLabel.text = viewModel.getDescription()
+        
+        if let image = viewModel.getImageThumnail() {
+            thumnail.image = image
+        }
     }
 
 }
