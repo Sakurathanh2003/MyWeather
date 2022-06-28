@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MyWeather" customModuleProvider="target">
             <connections>
+                <outlet property="maxAndMinTemp" destination="u2A-8z-4l4" id="uH7-Vc-OfA"/>
+                <outlet property="nameLocation" destination="RuX-z8-1Er" id="bEe-t7-klW"/>
+                <outlet property="tempLabel" destination="wVm-d9-U72" id="saD-ur-6Di"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="weatherCollectionView" destination="l6Q-SJ-m0J" id="yG3-dd-UJh"/>
             </connections>
@@ -108,7 +111,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GI5-Wf-ulq">
                             <rect key="frame" x="0.0" y="49" width="414" height="170"/>
                             <subviews>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="l6Q-SJ-m0J">
+                                <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="l6Q-SJ-m0J">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6Vc-CV-jSb">

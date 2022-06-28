@@ -28,7 +28,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Moon cloud fast wind" translatesAutoresizingMaskIntoConstraints="NO" id="EbU-02-moc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Cloud_zap" translatesAutoresizingMaskIntoConstraints="NO" id="EbU-02-moc">
                                 <rect key="frame" x="14" y="48" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="JIg-mf-YOB"/>
@@ -75,7 +75,7 @@
                                 <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.28235294117647058" green="0.19215686274509802" blue="0.61568627450980395" alpha="0.8238048427152318" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="value" red="0.28235294117647058" green="0.19215686274509802" blue="0.61568627450980395" alpha="0.20361651490066227" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="30"/>
@@ -94,6 +94,7 @@
             </constraints>
             <connections>
                 <outlet property="iconWeather" destination="EbU-02-moc" id="Euk-0j-BuB"/>
+                <outlet property="mainView" destination="AO0-cv-51Z" id="JcJ-yL-ChO"/>
                 <outlet property="percentRainLabel" destination="3j5-3M-HVO" id="uev-iP-1SJ"/>
                 <outlet property="temperatureLabel" destination="3xO-lm-ddj" id="Hf8-fp-KJ7"/>
                 <outlet property="timeLabel" destination="DkB-fY-pyK" id="5q7-aj-KQ0"/>
@@ -102,6 +103,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Moon cloud fast wind" width="32" height="32"/>
+        <image name="ic_Cloud_zap" width="1080" height="1080"/>
     </resources>
 </document>

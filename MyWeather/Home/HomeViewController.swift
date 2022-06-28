@@ -14,14 +14,30 @@ private struct Const {
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var weatherCollectionView: UICollectionView!
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var nameLocation: UILabel!
+    @IBOutlet weak var maxAndMinTemp: UILabel!
+    
+    var viewModel: HomeViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         config()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let viewModel = viewModel, let index = viewModel.getIndexCurrenCell() {
+            weatherCollectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: false)
+        }
+        
+        weatherCollectionView.isHidden = false
+    }
+
     private func config() {
         configCollectionView()
+        configLabel()
     }
     
     private func configCollectionView() {
@@ -31,6 +47,15 @@ class HomeViewController: UIViewController {
         weatherCollectionView.dataSource = self
         weatherCollectionView.backgroundColor = .clear
     }
+    
+    private func configLabel() {
+        if let viewModel = viewModel {
+            tempLabel.text = viewModel.getTempCurrent() + "°"
+            maxAndMinTemp.text = "H:\(Int(viewModel.getMaxTemp()))°   L:\(Int(viewModel.getMinTemp()))°"
+            nameLocation.text = viewModel.getNameLocation()
+        }
+    }
+    
     
     @IBAction func listWeatherButtonDidTap(_ sender: Any) {
         let vc = ListWeatherViewController()
@@ -44,15 +69,30 @@ extension HomeViewController: UICollectionViewDelegate {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel?.getNumberOfItemHour() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueCell(type: WeatherCell.self, indexPath: indexPath) else {
+        guard let cell = collectionView.dequeueCell(type: WeatherCell.self, indexPath: indexPath),
+            let item = viewModel?.hourIndex(index: indexPath.row), let index = viewModel?.getIndexCurrenCell() else {
             return UICollectionViewCell()
         }
         
+        cell.bindData(viewModel: item, now: indexPath.row == index)
+        print(item)
+
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = cell as? WeatherCell,
+              let item = viewModel?.hourIndex(index: indexPath.row),
+              let index = viewModel?.getIndexCurrenCell() else {
+            return
+        }
+        
+        cell.bindData(viewModel: item, now: indexPath.row == index)
+
     }
 }
 

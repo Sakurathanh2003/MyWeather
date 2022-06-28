@@ -15,4 +15,12 @@ extension UIColor {
         let blueValue = CGFloat(blue) / 255.0
         self.init(red: redValue, green: greenValue, blue: blueValue, alpha: 1.0)
     }
+    
+    convenience init(rgb: Int) {
+       self.init(
+           red: (rgb >> 16) & 0xFF,
+           green: (rgb >> 8) & 0xFF,
+           blue: rgb & 0xFF
+       )
+    }
 }
