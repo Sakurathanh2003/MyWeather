@@ -15,7 +15,7 @@ public class GetWeatherDay: ObservableObject {
     }
     
     init(location: String) {
-        self.load(location: location)
+        self.loadLocation(location: location)
     }
     
     func load() {
@@ -35,11 +35,14 @@ public class GetWeatherDay: ObservableObject {
         }
     }
     
-    func load(location: String) {
-        let api = "http://api.weatherapi.com/v1/forecast.json?key=084c278d4d264b14b80134021222706&q=\(location)&days=1&aqi=no&alerts=no"
-        guard let url = URL(string: API.api) else {
+    func loadLocation(location: String) {
+        let locationAPI = location.replacingOccurrences(of: " ", with: "%20")
+        let api = "http://api.weatherapi.com/v1/forecast.json?key=084c278d4d264b14b80134021222706&q=\(locationAPI)&days=1&aqi=no&alerts=no"
+        guard let url = URL(string: api) else {
             return
         }
+        print(api)
+
 
         do {
             let dataUrl = try Data(contentsOf: url)

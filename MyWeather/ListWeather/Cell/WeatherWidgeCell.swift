@@ -8,10 +8,23 @@
 import UIKit
 
 class WeatherWidgeCell: UICollectionViewCell {
-
+    
+    
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var maxMinLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func bindData(viewModel: ListWeatherItemViewModel) {
+        tempLabel.text = viewModel.getTempCurrent() + "°"
+        maxMinLabel.text = "H:\(Int(viewModel.getMaxTemp()))°   L:\(Int(viewModel.getMinTemp()))°"
+        locationLabel.text = viewModel.getNameLocation()
+        descriptionLabel.text = viewModel.getDescription()
     }
 
 }

@@ -79,6 +79,12 @@
                 <constraint firstAttribute="bottom" secondItem="Zpv-8z-n3b" secondAttribute="bottom" id="hr4-95-vL0"/>
                 <constraint firstItem="Zpv-8z-n3b" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mnb-r4-1w7"/>
             </constraints>
+            <connections>
+                <outlet property="descriptionLabel" destination="DmE-ie-H0L" id="p9j-EI-wwl"/>
+                <outlet property="locationLabel" destination="CYb-cr-rJL" id="kUo-uh-GNx"/>
+                <outlet property="maxMinLabel" destination="Pdt-M8-D0a" id="kms-L2-qN3"/>
+                <outlet property="tempLabel" destination="8mv-4C-DJp" id="DtH-09-D3X"/>
+            </connections>
             <point key="canvasLocation" x="139" y="114"/>
         </collectionViewCell>
     </objects>

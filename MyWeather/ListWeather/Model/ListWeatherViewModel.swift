@@ -14,7 +14,17 @@ struct ListWeatherViewModel {
     
     var weatherDays: [WeatherDay]
     
-    mutating func addWeatherDay(weatherDay: WeatherDay) {
-        self.weatherDays.append(weatherDay)
+    func numberOfItem() -> Int {
+        return weatherDays.count
+    }
+    
+    func itemAt(index: Int) -> ListWeatherItemViewModel {
+        return ListWeatherItemViewModel(weatherDay: weatherDays[index])
+    }
+    
+    mutating func addWeatherDay(weatherDay: [WeatherDay]) {
+        for day in weatherDay {
+            weatherDays.append(day)
+        }
     }
 }

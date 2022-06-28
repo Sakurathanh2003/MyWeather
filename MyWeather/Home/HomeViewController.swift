@@ -59,6 +59,11 @@ class HomeViewController: UIViewController {
     
     @IBAction func listWeatherButtonDidTap(_ sender: Any) {
         let vc = ListWeatherViewController()
+        let hanoi = GetWeatherDay(location: "Hanoi")
+        let hochiMinh = GetWeatherDay(location: "Ho Chi Minh")
+
+        vc.viewModel.addWeatherDay(weatherDay: hanoi.weatherDays)
+        vc.viewModel.addWeatherDay(weatherDay: hochiMinh.weatherDays)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -79,7 +84,6 @@ extension HomeViewController: UICollectionViewDataSource {
         }
         
         cell.bindData(viewModel: item, now: indexPath.row == index)
-        print(item)
 
         return cell
     }

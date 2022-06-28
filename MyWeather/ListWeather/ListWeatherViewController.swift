@@ -14,12 +14,17 @@ private struct Const {
 class ListWeatherViewController: UIViewController {
     
     @IBOutlet weak var weatherCollectionView: UICollectionView!
+    
+    var viewModel = ListWeatherViewModel.makeEmpty()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         config()
+        for haha in viewModel.weatherDays {
+            print(haha.location.name)
+        }
     }
     
     private func config() {
@@ -45,13 +50,16 @@ extension ListWeatherViewController: UICollectionViewDelegate {
 
 extension ListWeatherViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel.numberOfItem()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueCell(type: WeatherWidgeCell.self, indexPath: indexPath) else {
             return UICollectionViewCell()
         }
+        
+        let item = viewModel.itemAt(index: indexPath.row)
+        cell.bindData(viewModel: item)
         
         return cell
     }
