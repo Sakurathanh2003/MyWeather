@@ -23,12 +23,17 @@ class WeatherCell: UICollectionViewCell {
         // Initialization code
         self.cornerRadius = self.frame.width / 2
         updateFontLabel()
+        setShadow()
     }
 
     func updateFontLabel() {
         timeLabel.font = UIFont(name: "SFProText-Semibold", size: 15)
         temperatureLabel.font = UIFont(name: "SFProDisplay-Regular", size: 20)
         percentRainLabel.font = UIFont(name: "SFProText-Semibold", size: 13)
+    }
+    
+    func setShadow() {
+        
     }
     
     func bindData(viewModel: HomeItemViewModel, now: Bool) {

@@ -64,6 +64,45 @@ extension UIView {
         }
     }
     
+    @IBInspectable var shadowOffset: CGSize {
+        set {
+            self.layer.shadowOffset = newValue
+        }
+        
+        get {
+            return self.layer.shadowOffset
+        }
+    }
+    
+    @IBInspectable var shadowOpacity: Float {
+        set {
+            self.layer.shadowOpacity = newValue
+        }
+        
+        get {
+            return self.layer.shadowOpacity
+        }
+    }
+    
+    @IBInspectable var shadowColor: UIColor {
+        set {
+            self.layer.shadowColor = newValue.cgColor
+        }
+        
+        get {
+            return UIColor(cgColor: self.layer.shadowColor ?? UIColor.clear.cgColor)
+        }
+    }
+    
+    @IBInspectable var shadowPath: CGPath {
+        set {
+            self.layer.shadowPath = newValue
+        }
+        
+        get {
+            return self.layer.shadowPath ?? CGPath(rect: CGRect(), transform: .none)
+        }
+    }
     func fitSuperviewConstraint(edgeInset: UIEdgeInsets = .zero) {
        self.translatesAutoresizingMaskIntoConstraints = false
        let superview = self.superview!

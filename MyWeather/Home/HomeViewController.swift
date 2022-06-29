@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 private struct Const {
     static let ratioCell: CGFloat = 60 / 146
@@ -85,7 +86,6 @@ extension HomeViewController: UICollectionViewDataSource {
         }
         
         cell.bindData(viewModel: item, now: indexPath.row == index)
-        print(item)
 
         return cell
     }
